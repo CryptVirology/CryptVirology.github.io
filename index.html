@@ -110,6 +110,22 @@
       }
     }
 
+    .glitch-effect {
+      position: relative;
+      color: #00ff00;
+      text-shadow: 0 0 2px #00ff00, 0 0 10px #ff0000;
+      animation: glitch 1s infinite;
+    }
+
+    @keyframes glitch {
+      0% { transform: translate(0); }
+      20% { transform: translate(-2px, 2px); }
+      40% { transform: translate(2px, -1px); }
+      60% { transform: translate(-1px, -1px); }
+      80% { transform: translate(1px, 2px); }
+      100% { transform: translate(0); }
+    }
+
     @media (max-width: 768px) {
       .hero-section h1 {
         font-size: 2rem;
@@ -140,9 +156,9 @@
     <p class="mb-6">System status: compromised. Your identity is no longer safe. Proceed with caution.</p>
     <p class="mb-6">Below is what my CV looks like in neon :)</p>
     <button class="btn-cyborg px-6 py-3 rounded">Initiate Protocol</button>
+    
   </section>
-
-  <!-- About Me Section -->
+ <!-- About Me Section -->
   <section class="max-w-3xl w-full bg-black/80 border border-green-500 p-6 rounded-lg shadow-lg project-card">
     <h2 class="text-3xl mb-4">About Me</h2>
     <p class="mb-4">I'm <span class="text-cyan-400 font-bold">yrology</span>, a graduate student deeply fascinated by <span class="text-green-400">offensive security</span>, reverse engineering, and cryptographic vulnerabilities. I'm currently exploring applied cryptography and low-level systems with a sharp focus on secure software development and flaw discovery.</p>
@@ -189,6 +205,63 @@
       </ul>
     </div>
   </section>
+  <!-- [The rest of your about section remains unchanged...] -->
+
+  <!-- SOUND EFFECT -->
+  <audio id="cyberSound" preload="auto">
+    <source src="https://www.soundjay.com/mechanical/sounds/mechanical-sci-fi-03.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- JS + Typing + Redirect -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const button = document.querySelector('.btn-cyborg');
+      const sound = document.getElementById('cyberSound');
+
+      button.addEventListener('click', () => {
+        sound.play();
+
+        const alertBox = document.createElement('div');
+        alertBox.className = "fixed inset-0 bg-black bg-opacity-95 flex items-center justify-center z-50 text-center px-4";
+        alertBox.innerHTML = `
+          <div class="border-4 border-red-600 p-8 rounded-lg shadow-2xl text-green-400 text-lg md:text-2xl font-bold glitch-effect typing-message">
+          </div>
+        `;
+        document.body.appendChild(alertBox);
+
+        const messages = [
+          "⚠ VIRUS INJECTED ⚠",
+          "YOU’RE INFECTED.",
+          "Protocol: CYBER STRAIN X7 INITIATED"
+        ];
+
+        let i = 0;
+        const container = alertBox.querySelector('.typing-message');
+
+        function typeMessage(msgIndex = 0, charIndex = 0) {
+          if (msgIndex >= messages.length) {
+            setTimeout(() => {
+              window.location.href = "https://example.com"; // 🔁 Change redirect URL here
+            }, 2000);
+            return;
+          }
+
+          const message = messages[msgIndex];
+          if (charIndex < message.length) {
+            container.innerHTML += message.charAt(charIndex);
+            setTimeout(() => typeMessage(msgIndex, charIndex + 1), 50);
+          } else {
+            container.innerHTML += "<br>";
+            setTimeout(() => typeMessage(msgIndex + 1, 0), 500);
+          }
+        }
+
+        typeMessage();
+      });
+    });
+
+    
+  </script>
 
 </body>
 </html>
