@@ -1,51 +1,209 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Government Influence on Cryptography</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <title>Government Influence on Cryptographic Security</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="assets/cyborg.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>Government Influence on Cryptographic Security</h1>
 
-        <p>
-            This page documents historical and modern cases where
-            government agencies influenced, weakened, or pressured
-            cryptographic systems, standards, or implementations.
-        </p>
+<!-- Background Noise Overlay -->
+<div class="confusing-overlay">
+01010101 11010010 01100101 10101001
+11001010 00101010 01001010 11010010
+</div>
 
-        <h2>Topics Covered</h2>
-        <ul>
-            <li>Encryption backdoors and key escrow</li>
-            <li>Weakened cryptographic standards</li>
-            <li>Export controls and reduced key sizes</li>
-            <li>Pressure on tech companies</li>
-            <li>Hardware and firmware-level access</li>
-        </ul>
+<!-- Main Content -->
+<div class="max-w-4xl w-full mt-10 mb-20 project-card p-8 rounded-lg">
 
-        <h2>Why This Matters</h2>
-        <p>
-            Cryptography protects privacy, commerce, infrastructure,
-            and human rights. Any intentional weakening affects everyone,
-            not just the intended targets.
-        </p>
+  <a href="index.html" class="text-cyan-400 underline text-sm">
+    ← Back to home
+  </a>
 
-        <p>
-            This site aims to provide factual, well-sourced information
-            for educational and research purposes.
-        </p>
+  <h1 class="text-3xl mt-6 mb-4">
+    Government Influence on Cryptographic Security
+  </h1>
 
-        <p>
-            <a href="index.html">← Back to home</a>
-        </p>
+  <p class="text-sm mb-6">
+    This page documents historical and modern cases where government
+    agencies influenced, weakened, mandated access to, or applied pressure
+    on cryptographic systems, standards, and implementations.
+  </p>
 
-        <footer>
-            <p>CryptVirology.github.io</p>
-        </footer>
-    </div>
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">1. Early Control of Cryptography (1940s–1970s)</h2>
+
+  <p class="text-sm mb-3">
+    For much of the 20th century, cryptography was treated as a military
+    weapon. Governments, particularly the United States, actively suppressed
+    civilian research and public deployment.
+  </p>
+
+  <ul class="list-disc ml-6 text-sm space-y-2">
+    <li>
+      <strong>NSA (USA)</strong> classified cryptography as munitions, limiting
+      academic publication and commercial use.
+    </li>
+    <li>
+      Public cryptographic research was discouraged or quietly restricted
+      through secrecy orders and funding pressure.
+    </li>
+  </ul>
+
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">2. Manipulation of Cryptographic Standards</h2>
+
+  <h3 class="text-xl mt-4 mb-2">DES (Data Encryption Standard)</h3>
+  <p class="text-sm mb-3">
+    In the 1970s, the NSA influenced IBM’s DES algorithm, reducing its key
+    size to 56 bits. While secure at the time, this decision later rendered
+    DES vulnerable to brute-force attacks.
+  </p>
+
+  <h3 class="text-xl mt-4 mb-2">Dual_EC_DRBG</h3>
+  <p class="text-sm mb-3">
+    A pseudorandom number generator standardized by NIST in the 2000s.
+    Later analysis and leaked documents suggested it contained a
+    deliberate mathematical weakness known only to its designers.
+  </p>
+
+  <p class="text-sm mb-3">
+    This incident severely damaged global trust in cryptographic standards
+    bodies.
+  </p>
+
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">3. Encryption Backdoors & Key Escrow</h2>
+
+  <h3 class="text-xl mt-4 mb-2">Clipper Chip (1990s)</h3>
+  <p class="text-sm mb-3">
+    A U.S. government proposal for encrypted devices containing a built-in
+    government-accessible key escrow. The project failed after strong
+    opposition from technologists and civil liberties groups.
+  </p>
+
+  <p class="text-sm mb-3">
+    The Clipper Chip became a foundational example of why “secure backdoors”
+    are widely considered infeasible.
+  </p>
+
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">4. Export Controls and Deliberately Weak Crypto</h2>
+
+  <p class="text-sm mb-3">
+    During the 1990s, U.S. export regulations limited cryptographic key
+    lengths for software sold internationally.
+  </p>
+
+  <ul class="list-disc ml-6 text-sm space-y-2">
+    <li>40-bit SSL and encryption for browsers</li>
+    <li>Weakened VPN and email security</li>
+    <li>Long-term persistence of weak code paths</li>
+  </ul>
+
+  <p class="text-sm mt-3">
+    These decisions directly enabled later real-world attacks such as
+    FREAK and Logjam, decades after the original policies were repealed.
+  </p>
+
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">5. Pressure on Technology Companies</h2>
+
+  <h3 class="text-xl mt-4 mb-2">Apple</h3>
+  <p class="text-sm mb-3">
+    Governments have repeatedly pressured Apple to weaken device encryption
+    or provide special access. Apple has publicly resisted, citing systemic
+    security risks.
+  </p>
+
+  <h3 class="text-xl mt-4 mb-2">Messaging Platforms</h3>
+  <p class="text-sm mb-3">
+    Encrypted messaging services (WhatsApp, Signal, Telegram) have faced
+    legal and political pressure worldwide to enable traceability or
+    decryption capabilities.
+  </p>
+
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">6. Hardware & Firmware-Level Access</h2>
+
+  <p class="text-sm mb-3">
+    Modern systems increasingly rely on opaque hardware subsystems that
+    operate below the operating system.
+  </p>
+
+  <ul class="list-disc ml-6 text-sm space-y-2">
+    <li>
+      <strong>Intel Management Engine</strong> — a privileged subsystem with
+      extensive access, closed-source by design.
+    </li>
+    <li>
+      Concerns about government influence on hardware supply chains and
+      firmware persistence.
+    </li>
+  </ul>
+
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">7. Vulnerability Hoarding</h2>
+
+  <p class="text-sm mb-3">
+    Intelligence agencies have, at times, chosen to retain knowledge of
+    software vulnerabilities rather than disclose them.
+  </p>
+
+  <p class="text-sm mb-3">
+    When such exploits leak or are independently rediscovered, the impact
+    often affects civilians, hospitals, and critical infrastructure.
+  </p>
+
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">8. Global Landscape</h2>
+
+  <ul class="list-disc ml-6 text-sm space-y-2">
+    <li>
+      <strong>China:</strong> Mandatory government-approved cryptography and
+      access requirements.
+    </li>
+    <li>
+      <strong>Russia:</strong> Encryption key registration and interception
+      mandates.
+    </li>
+    <li>
+      <strong>UK / EU / Australia:</strong> Legal frameworks enabling forced
+      assistance or client-side scanning.
+    </li>
+  </ul>
+
+  <!-- ===================== -->
+  <h2 class="text-2xl mt-8 mb-3">Why This Matters</h2>
+
+  <p class="text-sm mb-3">
+    Cryptography underpins privacy, commerce, infrastructure security, and
+    political freedom. Intentional weakening introduces systemic risk that
+    cannot be selectively contained.
+  </p>
+
+  <p class="text-sm mb-3">
+    History repeatedly shows that once a weakness exists, it will be
+    exploited beyond its original intent.
+  </p>
+
+  <h2 class="text-2xl mt-8 mb-3">Intent of This Page</h2>
+
+  <p class="text-sm">
+    This site aims to provide factual, well-sourced, and technically grounded
+    information for educational and research purposes. It does not advocate
+    misuse, but encourages informed discussion about trust, power, and
+    security design.
+  </p>
+
+  <div class="mt-10 text-xs opacity-70">
+    CryptVirology.github.io
+  </div>
+
+</div>
+
 </body>
 </html>
